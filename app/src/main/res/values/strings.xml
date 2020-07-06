@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HW2.1</string>
+    <string name="amount">Введите сумму</string>
+    <string name="info">Информация об оплате</string>
+    <string name="ok">ОК</string>
+    <string name="txt_bankCard">С банковской карты</string>
+    <string name="txt_Phone">С мобильного телефона</string>
+    <string name="txt_cashPay">Наличными по адресу</string>
+</resources>
