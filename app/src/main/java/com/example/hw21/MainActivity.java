@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+
+
     }
 
     private void initViews() {
@@ -55,25 +57,41 @@ public class MainActivity extends AppCompatActivity {
                         resetCheckBoxes();
                         mPayByCard.setChecked(true);
                         mPaymentInfo.setInputType(InputType.TYPE_CLASS_NUMBER);
+                        mOK.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "Отправлено "+ mPaymentAmount.getText()+"₽ c карты " + mPaymentInfo.getText(), Toast.LENGTH_LONG).show();
+
+                            }
+                        });
                         break;
                     case R.id.box_payByPhone:
                         resetCheckBoxes();
                         mPayByPhone.setChecked(true);
                         mPaymentInfo.setInputType(InputType.TYPE_CLASS_PHONE);
+                        mOK.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "Отправлено "+ mPaymentAmount.getText()+"₽ c номера " + mPaymentInfo.getText(), Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+
                         break;
                     case R.id.box_CashPay:
                         resetCheckBoxes();
                         mCashPay.setChecked(true);
                         mPaymentInfo.setInputType(InputType.TYPE_CLASS_TEXT);
+                        mOK.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "Отправлено "+ mPaymentAmount.getText()+"₽ по адресу " + mPaymentInfo.getText(), Toast.LENGTH_LONG).show();
+                            }
+                        });
                         break;
                     default:
                 }
-            }mOK.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this, "необходимое сообщение", Toast.LENGTH_LONG).show();
-                }
-            });
+            }
         }
     };
 }
